@@ -22,20 +22,20 @@ export class Course implements InfoRace{
     // chaque voiture démarre
     this.participants.forEach(car => car.start());
 
-    // calcul du temps pour parcourir la distance
+    // calcul du temps 
     let results = this.participants.map(car => ({
       car,
       time: car.run(this.distance)
     }));
 
 
-    // tri par temps croissant (plus rapide en premier)
+    // tri par temps croissant
 results.sort((a, b) => a.time - b.time);
 
 // affichage du podium
 results.forEach((res, index) => {
   console.log(
-    `${index + 1}️⃣ ${res.car.Brand} ${res.car.Model} - temps: ${res.time.toFixed(2)} h`
+    `${index + 1}️ ${res.car.Brand} ${res.car.Model} - temps: ${res.time.toFixed(2)} h`
   );
 });
 
